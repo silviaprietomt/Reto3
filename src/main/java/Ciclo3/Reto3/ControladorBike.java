@@ -33,32 +33,31 @@ public class ControladorBike {
     @Autowired
     private ServiciosBike servicio;
     @GetMapping("/all")
-    public List<Motorbike> getBikes() {
+    public List<Motorbikes> getBike() {
         return servicio.getAll();
     }   
     
     @GetMapping("/{id}")
-    public Optional<Motorbike> getBike(@PathVariable("id") int bikeId) {
+    public Optional<Motorbikes> getBike(@PathVariable("id") int bikeId) {
         return servicio.getBike(bikeId);
     }
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Motorbike save(@RequestBody Motorbike bike) {
+    public Motorbikes save(@RequestBody Motorbikes bike) {
         return servicio.save(bike);
     }
     
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Motorbike update (@RequestBody Motorbike bike) {
-        return servicio.update(bike);
+    public Motorbikes update (@RequestBody Motorbikes bike) {
+        return servicio.update(bike);        
     }
     
-    //@DeleteMapping("/{id}")
-    //@ResponseStatus(HttpStatus.NO_CONTENT)
-    //public boolean delete(@PathVariable("id") int bikeId) {
-    //    return servicio.deleteBike(BikeId);
-
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int bikeId) {
+        return servicio.deleteMotorbike(bikeId);
+    } 
 }
     
-

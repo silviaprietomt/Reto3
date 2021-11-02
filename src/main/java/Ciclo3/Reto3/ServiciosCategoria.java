@@ -58,4 +58,8 @@ public class ServiciosCategoria {
             return categoria; 
         }
     }
+
+    boolean deleteCategoria(int categoriaId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

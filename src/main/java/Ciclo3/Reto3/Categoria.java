@@ -31,7 +31,7 @@ public class Categoria implements Serializable {
     
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
     @JsonIgnoreProperties("category")
-    private List<Motorbike> bikes;
+    private List<Motorbikes> motorbikes;
 
     public Integer getId() {
         return id;
@@ -57,12 +57,12 @@ public class Categoria implements Serializable {
         this.description = description;
     }
 
-    public List<Motorbike> getBikes() {
-        return bikes;
+    public List<Motorbikes> getBikes() {
+        return motorbikes;
     }
 
-    public void setBikes(List<Motorbike> bikes) {
-        this.bikes = bikes;
+    public void setBikes(List<Motorbikes> bikes) {
+        this.motorbikes = motorbikes;
     }
     
     

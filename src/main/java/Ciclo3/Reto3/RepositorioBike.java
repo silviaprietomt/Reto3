@@ -20,20 +20,20 @@ public class RepositorioBike {
     @Autowired
     private InterfaceBike crud;
     
-    public List<Motorbike> getAll() {
-        return (List<Motorbike>) crud.findAll();
+    public List<Motorbikes> getAll() {
+        return (List<Motorbikes>) crud.findAll();
     }
     
-    public Optional<Motorbike> getBike(int id) {
+    public Optional<Motorbikes> getBike(int id) {
         return crud.findById(id);
     }
     
-    public Motorbike save(Motorbike bike) {
-        return crud.save(bike);
+    public Motorbikes save(Motorbikes motorbike) {
+        return crud.save(motorbike);
     }
     
-    public void delete(Motorbike bike) {
-        crud.delete(bike);
+    public void delete(Motorbikes motorbike) {
+        crud.delete(motorbike);
     }
     
 }

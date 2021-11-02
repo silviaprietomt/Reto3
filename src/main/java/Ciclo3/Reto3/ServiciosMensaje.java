@@ -56,5 +56,9 @@ public class ServiciosMensaje {
             return message;            
         }        
     }
+
+    boolean deleteMensaje(int messageId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -25,7 +25,7 @@ import javax.persistence.Table;
 public class Cliente implements Serializable {  
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY   )
-    private Integer idCliente;
+    private Integer idClient;
     private String email;
     private String password;
     private String name;
@@ -40,11 +40,11 @@ public class Cliente implements Serializable {
     private List<Reservaciones> reservations;
 
     public Integer getIdCliente() {
-        return idCliente;
+        return idClient;
     }
 
     public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+        this.idClient = idCliente;
     }
 
     public String getEmail() {

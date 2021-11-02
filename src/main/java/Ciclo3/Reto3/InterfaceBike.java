@@ -12,6 +12,6 @@ import org.springframework.data.repository.CrudRepository;
  * @author Admon
  * Se hereda de los metodos CRUD
  */
-public interface InterfaceBike extends CrudRepository<Motorbike, Integer> {
+public interface InterfaceBike extends CrudRepository<Motorbikes, Integer> {
     
 }

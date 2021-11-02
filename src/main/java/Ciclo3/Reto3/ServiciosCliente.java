@@ -70,5 +70,9 @@ public class ServiciosCliente {
     //    )}.orElse(false);
     //    return aBoolean;
     //}
+
+    boolean deleteCliente(int clientId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
    
 }

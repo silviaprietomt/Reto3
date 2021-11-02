@@ -20,53 +20,53 @@ public class ServiciosBike {
     @Autowired
     private RepositorioBike metodosCrud;
     
-    public List<Motorbike> getAll() {
+    public List<Motorbikes> getAll() {
         return metodosCrud.getAll();
     }
     
-    public Optional<Motorbike> getBike(int bikeId) {
+    public Optional<Motorbikes> getBike(int bikeId) {
         return metodosCrud.getBike(bikeId);
     }
     
-    public Motorbike save(Motorbike bike) {
-       if (bike.getId()==null) {
-           return metodosCrud.save(bike);
+    public Motorbikes save(Motorbikes motorbike) {
+       if (motorbike.getId()==null) {
+           return metodosCrud.save(motorbike);
        }else{
-           Optional<Motorbike> e=metodosCrud.getBike(bike.getId());
+           Optional<Motorbikes> e=metodosCrud.getBike(motorbike.getId());
            if (e.isEmpty()){
-               return metodosCrud.save(bike);
+               return metodosCrud.save(motorbike);
            }else{
-               return bike;
+               return motorbike;
            }
        }
     }
     
-    public Motorbike update(Motorbike bike){
-        if(bike.getId()!=null) {
-            Optional<Motorbike> e=metodosCrud.getBike(bike.getId());
+    public Motorbikes update(Motorbikes motorbike){
+        if(motorbike.getId()!=null) {
+            Optional<Motorbikes> e=metodosCrud.getBike(motorbike.getId());
             if (e.isEmpty()){
-                if(bike.getName()!=null){
-                    e.get().setName(bike.getName());
+                if(motorbike.getName()!=null){
+                    e.get().setName(motorbike.getName());
                 }
-                if(bike.getBrand()!=null){
-                    e.get().setBrand(bike.getBrand());                    
+                if(motorbike.getBrand()!=null){
+                    e.get().setBrand(motorbike.getBrand());                    
                 }
-                if(bike.getYear()!=null){
-                    e.get().setYear(bike.getYear());  
+                if(motorbike.getYear()!=null){
+                    e.get().setYear(motorbike.getYear());  
                 }
-                if(bike.getDescription()!=null){
-                    e.get().setDescription(bike.getDescription());  
+                if(motorbike.getDescription()!=null){
+                    e.get().setDescription(motorbike.getDescription());  
                 }
-                if(bike.getCategory()!=null){
-                    e.get().setCategory(bike.getCategory());
+                if(motorbike.getCategory()!=null){
+                    e.get().setCategory(motorbike.getCategory());
                 }
                 metodosCrud.save(e.get());
                 return e.get();
             }else{
-                return bike;
+                return motorbike;
             }
         }else{
-            return bike;            
+            return motorbike;            
         }        
     }
         
@@ -77,6 +77,12 @@ public class ServiciosBike {
    //    )}.orElse(false);
    //    return aBoolean;    
    //*
+
+    boolean deleteMotorbike(int bikeId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 }
  
     

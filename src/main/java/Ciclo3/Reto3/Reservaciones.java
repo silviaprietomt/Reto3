@@ -35,7 +35,7 @@ public class Reservaciones implements Serializable {
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "id")
     @JsonIgnoreProperties("reservations")
-    private Motorbike bike;
+    private Motorbikes motorbike;
     
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "idclient")
@@ -76,12 +76,12 @@ public class Reservaciones implements Serializable {
         this.status = status;
     }
 
-    public Motorbike getBike() {
-        return bike;
+    public Motorbikes getBike() {
+        return motorbike;
     }
 
-    public void setBike(Motorbike bike) {
-        this.bike = bike;
+    public void setBike(Motorbikes bike) {
+        this.motorbike = motorbike;
     }
 
     public Cliente getClient() {

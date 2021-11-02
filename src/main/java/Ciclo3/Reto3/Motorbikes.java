@@ -23,10 +23,11 @@ import javax.persistence.Table;
  * @author Admon
  */
 @Entity
-@Table(name = "bike")
-public class Motorbike implements Serializable {
+@Table(name = "motorbike")
+public class Motorbikes implements Serializable{
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY   )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String brand;
@@ -34,16 +35,16 @@ public class Motorbike implements Serializable {
     private String description;
     
     @ManyToOne
-    @JoinColumn(name = "categoryid")
+    @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties("bikes")
     private Categoria category;
-    
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bike")
-    @JsonIgnoreProperties({"bike", "client"})
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "motorbike")
+    @JsonIgnoreProperties({"motorbike", "client"})
     private List<Mensaje> messages;
-    
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "bike")
-    @JsonIgnoreProperties({"bike", "client"})
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "motorbike")
+    @JsonIgnoreProperties({"motorbike", "client"})
     private List<Reservaciones> reservations;
 
     public Integer getId() {
@@ -109,7 +110,4 @@ public class Motorbike implements Serializable {
     public void setReservations(List<Reservaciones> reservations) {
         this.reservations = reservations;
     }
-    
-    
-    
 }

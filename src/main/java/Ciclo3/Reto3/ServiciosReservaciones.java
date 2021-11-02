@@ -62,5 +62,9 @@ public class ServiciosReservaciones {
             return reservation;            
         }        
     }
+
+    boolean deleteReservaciones(int reservationId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
